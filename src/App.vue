@@ -2,8 +2,10 @@
     <v-app>
        <tool-bar></tool-bar>
         <v-container >
-            <feed-item></feed-item>
-            <feed-item></feed-item>          
+          
+                <feed-item></feed-item>
+                
+     
         </v-container>
        <add-feed></add-feed>
     </v-app>

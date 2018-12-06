@@ -6,7 +6,7 @@
                 </v-btn>
 
                 <v-card>
-                    <v-card-title class="headline grey lighten-2" primary-title>
+                    <v-card-title class="headline primary" primary-title>
                         Add Feed
                     </v-card-title>
 
@@ -16,7 +16,7 @@
                         <v-text-field v-model="email" :error-messages="emailErrors" label="RSS Feed" required @input="$v.email.$touch()" @blur="$v.email.$touch()"></v-text-field>
                         <v-select v-model="select" :items="items" :error-messages="selectErrors" label="Group" required @change="$v.select.$touch()" @blur="$v.select.$touch()"></v-select>
 
-                        <v-btn @click="submit">Add Feed</v-btn>
+                        <v-btn class="secondary" @click="submit">Add Feed</v-btn>
                     </form>
 
                 </v-card>
