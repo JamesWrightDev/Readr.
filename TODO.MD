@@ -1,10 +1,10 @@
-TWUTTER (Working title)
+FEED.ME (Working title)
 
 ### Front-end
 
-- [ ] Task
-- [ ] Task
-- [ ] Task
+- [ ] Design the basic wireframe
+- [ ] Add folders
+- [ ] Create feed
 - [ ] Task
 - [ ] Task
 
