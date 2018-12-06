@@ -42,9 +42,9 @@
 export default {
         data: function(){
             return{
-
             }
-        }
+        },
+        props:{drawer}
 
 }
 </script>
