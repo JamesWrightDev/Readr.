@@ -1,13 +1,19 @@
 <template>
     <v-layout justify-center="true">
-        <v-flex xs12 md6 mt-1 mb-1>
-            <v-card color="white" class="black--text">
-              <v-card-title primary-title>             
-                  <div class="h1">Digital movie collection app Movies Anywhere adds its first pay TV partner, Comcast</div>
-                <v-btn color="secondary" >Read More</v-btn>
+        <v-flex xs12 md6 mt-3 mb-3>
+             <v-card color="light darken-2">
+              <v-card-title primary-title>
+                <div>
+                  <div class="headline secondary--text">{{title}}</div>
+                  <span>{{description}}</span>
+                </div>
               </v-card-title>
+              <v-card-actions>
+               <a :href='url' target="_blank">   <v-btn class='secondary' >Read More</v-btn></a>
+              </v-card-actions>
             </v-card>
           </v-flex>
+        
     </v-layout>
     
 </template>
@@ -17,7 +23,9 @@ export default {
         return{
             
         }
-    }
+    },
+    props: ['title','description','url'],
+
 
 }
 </script>
@@ -25,8 +33,10 @@ export default {
 .h1{
     font-size: 16px;
 }
-.v-btn{
-    margin: 10px 0;
+.headline{
+    margin-bottom: 10px;
+    
 }
+
 
 </style>
