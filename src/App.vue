@@ -2,10 +2,13 @@
     <v-app>
        <tool-bar></tool-bar>
         <v-container >
-            <div v-for="item in feed">
-                <feed-item :title="item.title" :description="item.description" :url="item.site_url"></feed-item>
-            </div>
-        </v-container>
+                   <!-- <feed-item v-for="item in feed" 
+                   :title="item.title" 
+                   :description="item.description" 
+                   :url="item.link"></feed-item> -->
+
+              </v-container>
+              <add-feed></add-feed>
     </v-app>
 </template>
 

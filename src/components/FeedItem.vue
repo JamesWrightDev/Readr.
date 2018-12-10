@@ -37,6 +37,9 @@ export default {
     margin-bottom: 10px;
     
 }
+a{
+    text-decoration: none;
+}
 
 
 </style>
