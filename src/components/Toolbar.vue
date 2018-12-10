@@ -28,30 +28,26 @@
                 </v-list-tile>
                  <v-expansion-panel>
                   <v-expansion-panel-content
-                    v-for="(item,i) in 3"
-                    :key="i"
                   >
-                    <div slot="header">Group {{i + 1}}</div>
-                    <v-card>
-                      <v-card-text>Lorem ipsum dolor sit amet, nisi ut aliquip ex ea commodo consequat.</v-card-text>
-                    </v-card>
-                  </v-expansion-panel-content>
-                </v-expansion-panel>
-            </v-list>
-
-            <v-list class="pt-0" dense>
+                    <div slot="header">Feeds</div>
+                   <v-list class="pt-0" dense>
                 <v-divider></v-divider>
 
-                <v-list-tile v-for="item in items" :key="item.title" @click="">
+                <v-list-tile v-for="item in feed_list" :key="item.title" @click="">
                     <v-list-tile-action>
                         <v-icon>{{ item.icon }}</v-icon>
                     </v-list-tile-action>
 
                     <v-list-tile-content>
-                        <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+                        <v-list-tile-title>{{ item }}</v-list-tile-title>
                     </v-list-tile-content>
-                </v-list-tile>
+                        </v-list-tile>
+                    </v-list>
+                  </v-expansion-panel-content>
+                </v-expansion-panel>
             </v-list>
+
+            
         </v-navigation-drawer>
 </div>
 </template>
@@ -61,7 +57,8 @@ export default {
             return{
                 drawer: false
             }
-        }
+        },
+        props: ['feed_list'],
 }
 </script>
 <style>

@@ -35,11 +35,11 @@ export default {
     },
     methods:{
         submit(){         
-            const data = {
-                'name': this.new_feed.name,
-                'url': 'hello world'
-            } 
-            this.axios.post('http://127.0.0.1:8000/api/feed/new', data ).then((response) => {
+            
+        
+            
+
+            this.axios.post('http://127.0.0.1:8000/api/feed/new', this.new_feed).then((response) => {
                 console.log(response);
             }).catch((error) =>{
                 console.log(error);
