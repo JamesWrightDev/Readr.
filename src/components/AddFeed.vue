@@ -34,11 +34,8 @@ export default {
         }
     },
     methods:{
-        submit(){         
-            
         
-            
-
+        submit(){         
             this.axios.post('http://127.0.0.1:8000/api/feed/new', this.new_feed).then((response) => {
                 console.log(response);
             }).catch((error) =>{
