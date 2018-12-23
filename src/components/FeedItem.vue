@@ -8,8 +8,9 @@
                   <span>{{description}}</span>
                 </div>
               </v-card-title>
-              <v-card-actions>
-               <a :href='url' target="_blank">   <v-btn class='secondary' >Read More</v-btn></a>
+              
+              <v-card-actions justify-center='true'>
+                    <a :href='url' target="_blank"> <v-btn class='secondary' >Read More</v-btn></a>
               </v-card-actions>
             </v-card>
           </v-flex>

@@ -1,7 +1,7 @@
 <template>
 <div class="text-xs-center">
             <v-dialog v-model="dialog" width="500">
-                <v-btn  fab dark color="primary" slot="activator">
+                <v-btn fab fixed bottom right color="primary" slot="activator">
                     <v-icon dark>add</v-icon>
                 </v-btn>
 
