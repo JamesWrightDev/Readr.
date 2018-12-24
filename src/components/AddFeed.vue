@@ -6,7 +6,7 @@
                 </v-btn>
 
                 <v-card>
-                    <v-card-title class="headline primary" primary-title>
+                    <v-card-title class="headline primary" secondary-title>
                         Add Feed
                     </v-card-title>
 
@@ -47,3 +47,11 @@ export default {
     
 }
 </script>
+<style>
+
+.headline{
+    color: white;
+    margin-bottom: 0;
+}
+</style>
+
