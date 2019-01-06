@@ -3,12 +3,12 @@
 <v-toolbar dark color="primary">
             <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
 
-            <v-toolbar-title class="white--text">FEED.Me</v-toolbar-title>
+            <v-toolbar-title class="white--text"></v-toolbar-title>
 
             <v-spacer></v-spacer>
 
             <v-btn icon>
-                <v-icon>refresh</v-icon>
+                <v-icon @click="emitGlobalClickEvent()">refresh</v-icon>
             </v-btn>
 
             <v-btn icon>
@@ -26,13 +26,8 @@
                         <v-list-tile-title>James Wright</v-list-tile-title>
                     </v-list-tile-content>
                 </v-list-tile>
-                 <v-expansion-panel>
-                  <v-expansion-panel-content
-                  >
-                    <div slot="header">Feeds</div>
-                   <v-list class="pt-0" dense>
+                
                 <v-divider></v-divider>
-
                 <v-list-tile v-for="item in feed_list" :key="item.title" @click="">
                     <v-list-tile-action>
                         <v-icon>{{ item.icon }}</v-icon>
@@ -43,8 +38,7 @@
                     </v-list-tile-content>
                         </v-list-tile>
                     </v-list>
-                  </v-expansion-panel-content>
-                </v-expansion-panel>
+
             </v-list>
 
             
@@ -52,10 +46,16 @@
 </div>
 </template>
 <script>
+import EventBus from '../event-bus.js';
 export default {
         data: function(){
             return{
                 drawer: false
+            }
+        },
+        methods:{
+            emitGlobalClickEvent (){
+                EventBus.$emit('refreshfeed');
             }
         },
         props: ['feed_list'],

@@ -2,12 +2,23 @@ import Vue from 'vue'
 import './plugins/vuetify'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import Router from 'vue-router'
 import App from './App.vue'
-Vue.use(VueAxios, axios)
+Vue.use(VueAxios, axios, Router)
 
 Vue.config.productionTip = false
 
 new Vue({
   render: h => h(App),
-}).$mount('#app')
+}).$mount('#app');
+export default new Router({
+  routes: [
+    {
+      path: '/',
+      name: 'App',
+      component: App
+    }
+  ]
+})
+
 
