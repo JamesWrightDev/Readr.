@@ -1,12 +1,12 @@
 <template>
     <v-layout justify-center="true">
-        <v-flex xs12 md6 mt-2 mb-0>
+        <v-flex xs12 md6 mt-2 mb-2>
             <a :href="url" target="_blank">
                 <v-card color="light darken-2">
                     <v-card-title primary-title>
                  <div>
-                 <div class="h1"><a class='h1' :href='url'>{{title}}</a></div>
-                  <span class='p'>{{description}} </span>
+                 <div class="h1"><a class='h1' target="_blank" :href='url'>{{title}}</a></div>
+               
                   <v-divider></v-divider>
                   <v-chip color='primary' text-color="white">{{outlet}}</v-chip>
                   <v-chip outline>{{date}}</v-chip>                
@@ -53,6 +53,9 @@ a:visited{
 
 .v-divider{
     margin: 20px 0 10px 0;
+}
+.v-card{
+    border-radius: 4px;
 }
 
 </style>

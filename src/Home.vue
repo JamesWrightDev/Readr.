@@ -1,5 +1,21 @@
 <template>
-    
+    <v-app>
+       <tool-bar :feed_list='this.feed_list'></tool-bar>
+        <v-container >
+                    <v-layout v-if='loading' justify-center="true" align-center='true'>
+                        <v-progress-circular indeterminate color="primary" size="64"></v-progress-circular>
+                    </v-layout>
+                   <feed-item v-for="item in feed" 
+                        :title="item.title" 
+                        :description="item.description" 
+                        :url="item.link"
+                        :date='item.date'
+                        :outlet="item.outlet">
+                   </feed-item>
+
+              </v-container>
+              <add-feed></add-feed>
+    </v-app>
 </template>
 
 <script>
@@ -10,7 +26,7 @@
 
    
    export default {
-        name: 'App',
+        name: 'Home',
         components: {
           ToolBar,AddFeed, FeedItem
         },

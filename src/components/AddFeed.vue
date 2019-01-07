@@ -10,7 +10,6 @@
                         Add Feed
                     </v-card-title>
 
-                    <v-divider></v-divider>
                     <form class='pa-5'>
                         <v-text-field v-model="new_feed.feed_url" label="RSS Feed" required @input="$v.email.$touch()" @blur="$v.email.$touch()"></v-text-field>
                         <v-btn class="secondary" @click="submit">Add Feed</v-btn>
