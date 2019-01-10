@@ -16,9 +16,60 @@
      </v-toolbar>
     <v-navigation-drawer v-model="drawer" absolute temporary>
             <v-list class="pa-0" >
-            <template v-for="item in feed_list" >
-                <feed-source-item :key="item.feed_id" :feed_id="item.feed_id" :feed_name="item.feed_name"></feed-source-item>
-            </template>
+                <!-- User Info -->
+
+                <!-- Feed List -->
+                <v-subheader inset>Feeds</v-subheader>
+                <template v-for="item in feed_list" >
+                    <feed-source-item :key="item.feed_id" :feed_id="item.feed_id" :feed_name="item.feed_name"></feed-source-item>
+                </template>
+                <v-subheader inset>
+                    <v-btn outline small color=primary fab depressed>
+                        <v-icon>edit</v-icon>
+                    </v-btn>
+                </v-subheader>
+            <v-dialog
+                v-model="dialog"
+                width="500"
+                >
+                <v-btn
+                outline 
+                small 
+                color=primary 
+                fab 
+                depressed
+                slot="activator"
+                dark>
+                    <v-icon>edit</v-icon>
+                </v-btn>
+            
+
+            <v-card>
+                <v-card-title
+                class="headline primary lighten-2"
+                primary-title
+                >
+                Edit Feeds
+                </v-card-title>
+
+                <v-card-text>
+                </v-card-text>
+
+                <v-divider></v-divider>
+
+                <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn
+                    color="primary"
+                    flat
+                    @click="dialog = false"
+                >
+                    I accept
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+                
             </v-list>
     </v-navigation-drawer>
         <div

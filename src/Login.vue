@@ -10,31 +10,37 @@
                         v-model="valid"
                         lazy-validation
                         >
-                        <v-icon color="grey">person</v-icon>
-                        <v-text-field
-                        v-model="name"
-                        :counter="10"
-                        :rules="nameRules"
-                        label="Username"
-                        required
-                        ></v-text-field>
-
-                        <v-icon color="grey">lock</v-icon>
-                        <v-text-field
+                        <v-layout justify-center="true" align-center='true'>
+                            <v-flex xs2>
+                                <v-icon color="grey">person</v-icon>
+                            </v-flex>
+                            <v-flex xs11>
+                                <v-text-field
+                                    v-model="name"
+                                    :counter="10"
+                                    :rules="nameRules"
+                                    label="Username"
+                                    required
+                                    >
+                                    </v-text-field>
+                            </v-flex>
+                        </v-layout>
+                        <v-layout justify-center="true" align-center='true'>
+                            <v-flex xs2>
+                                <v-icon color="grey">lock</v-icon>
+                            </v-flex>
+                            <v-flex xs11>
+                                   <v-text-field
                         v-model="email"
                         :rules="emailRules"
+                        :type="show2 ? 'text' : 'password'"
                         label="Password"
                         required
                         ></v-text-field>
-
-                        <v-checkbox
-                        v-model="checkbox"
-                        :rules="[v => !!v || 'You must agree to continue!']"
-                        label="Do you agree?"
-                        required
-                        ></v-checkbox>
-
+                            </v-flex>
+                        </v-layout>
                         <v-btn
+                        block
                         :disabled="!valid"
                         color="primary"
                         @click="validate"
