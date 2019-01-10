@@ -1,6 +1,17 @@
 <template>
     <v-app>
        <tool-bar :feed_list='this.feed_list'></tool-bar>
+
+       <v-alert
+      dismissible
+      v-if="error"
+      :value="true"
+      type="error"
+        >
+        Error fetching feed, please try again.
+        </v-alert>
+
+
         <v-container >
                     <v-layout v-if='loading' justify-center="true" align-center='true'>
                         <v-progress-circular indeterminate color="primary" size="64"></v-progress-circular>
@@ -36,6 +47,7 @@
                 feed:null,
                 feed_list: null,
                 loading: true,
+                error: false
             }
         },
         methods:{
@@ -60,12 +72,18 @@
                 let url = 'http://127.0.0.1:8000/api/feed/'+ params;
                 console.log(url);
 
-                this.axios.get(url).then((response) => {
-
+                this.axios.get(url)
+                
+                .then((response) => {
                     let data = response.data;
                     this.feed = data.articles;
                     console.log(response);
                     this.loading = false;
+                })
+                .catch((error)=>{
+                    console.log(error);
+                    this.loading = false;
+                    this.error = true;
                 })
 
             }
@@ -88,7 +106,9 @@
 </script>
 <style>
 
-.v-card{
+.v-alert{
+    margin: 0;
+    border-color: red;
 
 }
 </style>

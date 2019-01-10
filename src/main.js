@@ -12,11 +12,6 @@ Vue.use(VueAxios, axios, Router)
 Vue.config.productionTip = false
 
 
-new Vue({
-  el: '#app',
-  router: Router,
-  render: h => h(App)
-});
 
 const router = new Router({
   routes: [
@@ -31,6 +26,12 @@ const router = new Router({
         component: Login
     },
   ]
+});
+
+new Vue({
+  el: '#app',
+  router: Router,
+  render: h => h(App)
 });
 
 

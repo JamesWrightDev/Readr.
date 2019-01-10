@@ -15,39 +15,17 @@
             </v-btn>
      </v-toolbar>
     <v-navigation-drawer v-model="drawer" absolute temporary>
-            <v-list class="pa-0">
-                <v-list-tile avatar>
-                    <v-list-tile-avatar>
-                        <img src="https://randomuser.me/api/portraits/men/85.jpg">
-                    </v-list-tile-avatar>
-
-                    <v-list-tile-content>
-                        <v-list-tile-title>James Wright</v-list-tile-title>
-                    </v-list-tile-content>
-                </v-list-tile>
-                
-                <v-divider></v-divider>
-                <!-- <feed-source-item></feed-source-item> -->
-                <v-list-tile v-for="item in feed_list" :key="item.id" @click="">
-                    <v-list-tile-action>
-                        <v-icon >{{ item.icon }}</v-icon>
-                    </v-list-tile-action>
-
-                    <v-list-tile-content>
-                        <v-list-tile-title @click="emitGlobalClick('39')">{{ item.feed_name }}</v-list-tile-title>
-                    </v-list-tile-content>
-                        </v-list-tile>
-                    </v-list>
-
+            <v-list class="pa-0" >
+            <template v-for="item in feed_list" >
+                <feed-source-item :key="item.feed_id" :feed_id="item.feed_id" :feed_name="item.feed_name"></feed-source-item>
+            </template>
             </v-list>
-
-            
-        </v-navigation-drawer>
+    </v-navigation-drawer>
         <div
-      id="scrolling-techniques"
-      class="scroll-y"
-      style="max-height: 600px;"
-    >
+            id="scrolling-techniques"
+            class="scroll-y"
+            style="max-height: 600px;"
+            >
     </div>
   </div>
 </div>
@@ -62,7 +40,7 @@ export default {
             },
         data: function(){
             return{
-                drawer: false
+                drawer: false,
             }
         },
         methods:{
@@ -70,7 +48,7 @@ export default {
                 EventBus.$emit('refreshfeed');
             },
             emitGlobalClick (params){
-                EventBus.$emit('selectfeed', params);
+                console.log(this.feed);
             }
         },
         props: ['feed_list'],
