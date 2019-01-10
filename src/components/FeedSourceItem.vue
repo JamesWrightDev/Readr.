@@ -1,7 +1,7 @@
 <template>
  <v-list-tile @click="emitGlobalClick()">
-    <v-list-tile-action>
-        <v-icon>{{feed_id}}</v-icon>
+     <v-list-tile-action>
+              <v-icon color="grey">delete</v-icon>
     </v-list-tile-action>
     <v-list-tile-content>
         <v-list-tile-title>{{ feed_name }}</v-list-tile-title>

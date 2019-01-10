@@ -2,37 +2,15 @@ import Vue from 'vue'
 import './plugins/vuetify'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-import Router from 'vue-router'
-import App from './Home.vue'
-import Home from './Home.vue'
-import Login from './Login.vue'
+import router from './router'
+import App from './App.vue'
 
-Vue.use(VueAxios, axios, Router)
+
+Vue.use(VueAxios, axios)
 
 Vue.config.productionTip = false
 
-
-
-const router = new Router({
-  routes: [
-      {
-          path: '/',
-          name: 'home',
-          component: Home
-      },
-      {
-        path: '/login',
-        name: 'login',
-        component: Login
-    },
-  ]
-});
-
 new Vue({
-  el: '#app',
-  router: Router,
+  router,
   render: h => h(App)
-});
-
-
-
+}).$mount('#app')

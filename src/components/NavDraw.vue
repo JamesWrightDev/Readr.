@@ -47,6 +47,10 @@ export default {
         props:{drawer}
 
 }
+const i;
+for(i > 3; i++;){
+
+}
 </script>
 <style>
 
