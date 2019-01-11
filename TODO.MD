@@ -2,11 +2,11 @@ FEED.ME (Working title)
 
 ### Front-end
 
-- [ ] Design the basic wireframe
+- [x] Design the basic wireframe
 - [ ] Add folders
-- [ ] Create feed
-- [ ] Task
-- [ ] Task
+- [x] Create feed
+- [ ] Sort By date
+- [ ] Add Folder feature
 
 
 ### Front-end

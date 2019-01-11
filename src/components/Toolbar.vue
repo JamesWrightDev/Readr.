@@ -69,7 +69,6 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
-                
             </v-list>
     </v-navigation-drawer>
         <div
