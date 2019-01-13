@@ -23,11 +23,7 @@
                 <template v-for="item in feed_list" >
                     <feed-source-item :key="item.feed_id" :feed_id="item.feed_id" :feed_name="item.feed_name"></feed-source-item>
                 </template>
-                <v-subheader inset>
-                    <v-btn outline small color=primary fab depressed>
-                        <v-icon>edit</v-icon>
-                    </v-btn>
-                </v-subheader>
+
             <v-dialog
                 v-model="dialog"
                 width="500"
@@ -39,7 +35,8 @@
                 fab 
                 depressed
                 slot="activator"
-                dark>
+                dark
+                inset>
                     <v-icon>edit</v-icon>
                 </v-btn>
             
